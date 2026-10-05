@@ -1,0 +1,1491 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>クスカ｜名古屋・春日井の通年制 自然体験教室（KIDS SMALL CAMP）</title>
+<meta name="description" content="クスカ（KIDS SMALL CAMP）は年中〜小学生を対象にした通年制の自然体験教室。駅に集合し、電車やバスで森や川へ。月1回・年12回、同じ仲間と一年をめぐります。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#faf7f0;
+  --paper-2:#f3eee2;
+  --paper-3:#eae3d2;
+  --ink:#23302a;
+  --ink-soft:#5b6b62;
+  --forest:#2e5c48;
+  --forest-deep:#1d3f31;
+  --forest-flat:#4a9268;
+  --forest-flat-dk:#3d7c58;
+  --cta:#e8722b;
+  --spring:#e0a0ad;
+  --summer:#4f9d69;
+  --autumn:#d3792f;
+  --winter:#6d8ba3;
+  --camp:#e0702f;
+  --gold:#d9a441;
+  --line:#06c755;
+  --radius:18px;
+  --shadow:0 2px 0 rgba(35,48,42,.10);
+}
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;scroll-padding-top:78px;}
+body{
+  margin:0;
+  font-family:"Zen Maru Gothic",-apple-system,BlinkMacSystemFont,"Hiragino Sans",sans-serif;
+  color:var(--ink);
+  background:var(--paper);
+  line-height:1.9;
+  font-size:16px;
+  word-break:auto-phrase;
+  line-break:strict;
+  overflow-wrap:anywhere;
+  -webkit-font-smoothing:antialiased;
+}
+img{max-width:100%;display:block;}
+a{color:inherit;}
+.wrap{width:min(1080px,calc(100% - 40px));margin-inline:auto;}
+.nowrap{white-space:nowrap;}
+
+/* ---------- header ---------- */
+header{
+  position:sticky;top:0;z-index:50;
+  background:rgba(250,247,240,.92);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--paper-3);
+}
+.hbar{display:flex;align-items:center;gap:16px;height:70px;}
+.hlogo{display:flex;align-items:center;gap:11px;text-decoration:none;margin-right:auto;}
+.hlogo img.mark{height:32px;width:auto;}
+.hlogo img.wm{height:31px;width:auto;}
+nav.main{display:flex;gap:17px;}
+nav.main a{text-decoration:none;font-size:.85rem;font-weight:700;white-space:nowrap;color:var(--ink-soft);padding-bottom:2px;border-bottom:2px solid transparent;}
+nav.main a:hover{color:var(--forest);border-bottom-color:var(--forest);}
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:7px;
+  padding:11px 20px;border-radius:999px;text-decoration:none;
+  font-weight:700;font-size:.88rem;border:2px solid transparent;white-space:nowrap;
+  transition:transform .15s ease, box-shadow .15s ease;
+}
+.btn:hover{transform:translateY(-1px);}
+.btn-line{background:var(--line);color:#fff;box-shadow:0 3px 0 #04a446;}
+.btn-line:hover{box-shadow:0 4px 0 #04a446;}
+.btn-ghost{border-color:var(--forest);color:var(--forest);background:transparent;}
+.btn-ghost:hover{background:var(--forest);color:var(--paper);}
+.btn-solid{background:var(--forest);color:var(--paper);box-shadow:0 3px 0 var(--forest-deep);}
+.btn-lg{padding:16px 34px;font-size:1rem;}
+.burger{display:none;width:44px;height:44px;border:1px solid var(--paper-3);border-radius:12px;background:var(--paper);align-items:center;justify-content:center;cursor:pointer;}
+.burger span{display:block;width:20px;height:2px;background:var(--ink);position:relative;}
+.burger span::before,.burger span::after{content:"";position:absolute;left:0;width:20px;height:2px;background:var(--ink);}
+.burger span::before{top:-6px;}.burger span::after{top:6px;}
+.drawer{display:none;border-top:1px solid var(--paper-3);background:var(--paper);padding:16px 0 22px;}
+.drawer.open{display:block;}
+.drawer a{display:block;text-decoration:none;font-weight:700;padding:11px 0;border-bottom:1px dashed var(--paper-3);color:var(--ink);}
+.drawer .btn{margin-top:14px;width:100%;}
+
+/* ---------- side cta ---------- */
+.side-cta{
+  position:fixed;right:0;top:50%;transform:translateY(-50%);z-index:60;
+  background:var(--cta);color:#fff;text-decoration:none;
+  border-radius:10px 0 0 10px;padding:16px 9px;
+  box-shadow:-2px 3px 10px rgba(35,48,42,.25);
+  font-weight:700;font-size:.8rem;line-height:1.45;
+  width:2.9em;text-align:center;word-break:break-all;
+}
+.side-cta:hover{padding-right:16px;}
+@media(max-width:900px){ .side-cta{display:none;} }
+
+/* ---------- hero ---------- */
+.hero{position:relative;overflow:hidden;padding:64px 0 0;background:linear-gradient(180deg,#f7f4ea 0%,#faf7f0 60%);}
+.hero-inner{display:grid;grid-template-columns:1.05fr .95fr;gap:44px;align-items:center;}
+.eyebrow{display:inline-flex;align-items:center;gap:9px;font-size:.78rem;font-weight:700;letter-spacing:.12em;color:var(--forest);background:#fff;border:1px solid var(--paper-3);padding:7px 15px;border-radius:999px;}
+.hero h1{font-size:clamp(2rem,5.2vw,3.15rem);line-height:1.42;margin:20px 0 18px;font-weight:900;letter-spacing:.01em;}
+.hero h1 em{
+  font-style:normal;display:inline;
+  background:linear-gradient(transparent 62%, rgba(217,164,65,.42) 62%, rgba(217,164,65,.42) 94%, transparent 94%);
+}
+.hero p.lead{font-size:1.02rem;color:var(--ink-soft);margin:0 0 26px;}
+.hero-cta{display:flex;gap:12px;flex-wrap:wrap;}
+.facts{display:flex;gap:10px;flex-wrap:wrap;margin-top:28px;}
+.fact{background:#fff;border:1px solid var(--paper-3);border-radius:14px;padding:10px 15px;font-size:.82rem;font-weight:700;color:var(--ink-soft);}
+.fact b{color:var(--forest);font-size:.92rem;}
+.hero-art{position:relative;}
+.hero-art svg{width:100%;height:auto;filter:drop-shadow(0 6px 0 rgba(35,48,42,.07));}
+.hero-photo{
+  position:relative;border-radius:24px;overflow:hidden;
+  border:6px solid #fff;
+  box-shadow:0 10px 0 rgba(35,48,42,.07), 0 18px 40px rgba(35,48,42,.12);
+}
+.hero-photo img{width:100%;height:auto;display:block;}
+@media(min-width:901px){
+  .hero-photo{aspect-ratio:4/3;}
+  .hero-photo img{height:100%;object-fit:cover;object-position:74% center;}
+}
+.hero-photo::after{
+  content:"";position:absolute;inset:0;pointer-events:none;
+  box-shadow:inset 0 0 0 1px rgba(35,48,42,.08);border-radius:18px;
+}
+
+/* ---------- section basics ---------- */
+section{padding:84px 0;}
+.sec-head{text-align:center;margin-bottom:44px;}
+.sec-en{font-size:.72rem;letter-spacing:.34em;font-weight:700;color:var(--gold);display:block;margin-bottom:8px;}
+.sec-head h2{font-size:clamp(1.5rem,3.6vw,2.05rem);margin:0 0 12px;font-weight:900;line-height:1.5;}
+.sec-head h2::after{content:"";display:block;width:44px;height:3px;background:var(--gold);border-radius:2px;margin:16px auto 0;}
+.sec-head p{max-width:640px;margin:0 auto;color:var(--ink-soft);font-size:.96rem;}
+
+/* ---------- intro ---------- */
+.intro{padding:76px 0 70px;background:var(--paper);}
+.intro-inner{max-width:720px;}
+.intro p{margin:0 0 26px;font-size:1.02rem;line-height:2.1;color:var(--ink);}
+.intro-voices{list-style:none;margin:0 0 26px;padding:0;display:grid;gap:12px;}
+.intro-voices li{
+  position:relative;padding:13px 20px 13px 40px;
+  background:var(--paper-2);border:1px solid var(--paper-3);border-radius:14px;
+  font-size:1.02rem;font-weight:700;color:var(--forest);line-height:1.7;
+}
+.intro-voices li::before{
+  content:"“";position:absolute;left:15px;top:9px;
+  font-size:1.9rem;line-height:1;color:var(--gold);font-weight:900;
+}
+.intro-close{
+  margin:0;padding:22px 26px;border-left:4px solid var(--gold);
+  background:var(--paper-2);border-radius:0 14px 14px 0;
+  font-weight:700;
+}
+@media(max-width:768px){
+  .intro{padding:54px 0 48px;}
+  .intro p{font-size:.98rem;line-height:2;}
+  .intro p br{display:none;}
+  .intro-voices li{font-size:.95rem;}
+  .intro-close{padding:18px 20px;}
+  .intro-close br{display:none;}
+}
+
+/* ---------- クスカの一日（流れ図） ---------- */
+.intro .sec-head p{margin:0 auto;}
+.dayflow{
+  list-style:none;margin:44px auto 40px;padding:0;max-width:740px;
+  display:grid;
+}
+.dayflow li{
+  position:relative;display:grid;
+  grid-template-columns:56px 1fr;align-items:start;
+  padding-bottom:38px;
+}
+.dayflow li:last-child{padding-bottom:0;}
+.dayflow li::after{
+  content:"";position:absolute;left:27px;top:50px;
+  width:2px;height:calc(100% - 50px);
+  background:repeating-linear-gradient(180deg,#cdc3ab 0 6px,transparent 6px 12px);
+}
+.dayflow li:last-child::after{content:none;}
+.df-icon{
+  grid-column:1;justify-self:center;margin-top:1px;
+  width:50px;height:50px;border-radius:50%;background:var(--forest);
+  display:grid;place-items:center;position:relative;z-index:1;
+}
+.df-icon svg{width:25px;height:25px;display:block;}
+.df-body{grid-column:2;padding:0 0 0 22px;}
+.df-body summary{
+  list-style:none;cursor:pointer;position:relative;
+  padding:12px 42px 12px 0;border-bottom:1px solid var(--paper-3);
+}
+.df-body summary::-webkit-details-marker{display:none;}
+.df-body summary::after{
+  content:"";position:absolute;right:14px;top:50%;
+  width:9px;height:9px;margin-top:-6px;
+  border-right:2px solid var(--forest);border-bottom:2px solid var(--forest);
+  transform:rotate(45deg);transition:transform .22s ease;
+}
+.df-body[open] summary::after{transform:rotate(-135deg);margin-top:-2px;}
+.df-body summary:hover b{color:var(--forest);}
+.dayflow b{display:block;font-size:1.1rem;font-weight:900;color:var(--ink);transition:color .15s ease;}
+.df-txt{
+  display:block;padding:14px 8px 4px 0;
+  font-size:.94rem;line-height:2.05;color:var(--ink-soft);
+}
+@media(max-width:768px){
+  .dayflow{margin:34px auto 30px;}
+  .dayflow li{grid-template-columns:44px 1fr;padding-bottom:28px;}
+  .dayflow li::after{left:21px;top:44px;height:calc(100% - 44px);}
+  .df-icon{grid-column:1;align-self:start;width:44px;height:44px;}
+  .df-icon svg{width:22px;height:22px;}
+  .df-body{grid-column:2;padding:0 0 0 16px;}
+  .dayflow b{font-size:1.02rem;}
+  .df-body summary{padding:11px 34px 11px 0;}
+  .df-body summary::after{right:10px;}
+  .df-txt{padding:11px 4px 2px 0;font-size:.9rem;line-height:1.95;}
+}
+
+/* ---------- 参加の流れ ---------- */
+.flow{background:var(--paper);}
+.flowlist{
+  list-style:none;margin:0 auto;padding:0;max-width:760px;
+  display:grid;gap:14px;counter-reset:fl;
+}
+.flowlist li{
+  position:relative;padding:20px 24px 20px 72px;
+  background:#fff;border:1px solid var(--paper-3);border-radius:16px;
+}
+.flowlist li::before{
+  counter-increment:fl;content:counter(fl);
+  position:absolute;left:22px;top:21px;z-index:1;
+  width:32px;height:32px;border-radius:50%;
+  background:var(--forest);color:#fff;
+  font-size:.86rem;font-weight:900;line-height:32px;text-align:center;
+}
+.flowlist li::after{
+  content:"";position:absolute;left:37px;top:58px;
+  width:2px;height:calc(100% - 44px);
+  background:repeating-linear-gradient(180deg,#d8cfb9 0 6px,transparent 6px 12px);
+}
+.flowlist li:last-child::after{content:none;}
+.flowlist h3{margin:0 0 6px;font-size:1.02rem;font-weight:900;color:var(--forest);}
+.flowlist p{margin:0;font-size:.9rem;line-height:1.95;color:var(--ink-soft);}
+.flowlist em{font-style:normal;font-weight:800;color:var(--ink);}
+@media(max-width:768px){
+  .flowlist li{padding:17px 18px 17px 58px;}
+  .flowlist li::before{left:15px;top:18px;width:28px;height:28px;line-height:28px;font-size:.8rem;}
+  .flowlist li::after{left:28px;top:51px;height:calc(100% - 37px);}
+  .flowlist h3{font-size:.97rem;}
+  .flowlist p{font-size:.88rem;line-height:1.9;}
+}
+
+/* ---------- season intro (on green) ---------- */
+.season-intro{max-width:720px;margin:0 auto 46px;}
+.season-intro p{margin:0 0 24px;font-size:1.02rem;line-height:2.1;color:rgba(255,255,255,.94);}
+.intro-voices.on-green li{
+  background:rgba(255,255,255,.14);border-color:rgba(255,255,255,.3);color:#fff;
+}
+.intro-voices.on-green li::before{color:#ffd479;}
+.intro-close.on-green{
+  background:rgba(255,255,255,.14);border-left-color:#ffd479;color:#fff;
+}
+@media(max-width:768px){
+  .season-intro{margin-bottom:30px;}
+  .season-intro p{font-size:.98rem;line-height:2;}
+  .season-intro p br{display:none;}
+}
+
+.intro-points{list-style:none;margin:0 0 26px;padding:0;display:grid;gap:12px;counter-reset:ip;}
+.intro-points li{
+  position:relative;padding:16px 22px 16px 58px;
+  background:var(--paper-2);border:1px solid var(--paper-3);border-radius:14px;
+  font-size:.92rem;line-height:1.95;color:var(--ink-soft);
+}
+.intro-points li::before{
+  counter-increment:ip;content:counter(ip);
+  position:absolute;left:18px;top:17px;
+  width:26px;height:26px;border-radius:50%;
+  background:var(--forest);color:#fff;
+  font-size:.78rem;font-weight:900;line-height:26px;text-align:center;
+}
+.intro-points b{display:block;margin-bottom:3px;font-size:.98rem;color:var(--forest);}
+@media(max-width:768px){
+  .intro-points li{padding:14px 18px 14px 50px;font-size:.9rem;}
+  .intro-points li::before{left:14px;top:15px;}
+}
+
+/* ---------- photo strip ---------- */
+.strip{padding:10px 0;background:var(--forest-flat);overflow:hidden;}
+.mq-track{
+  display:flex;gap:8px;width:max-content;
+  animation:mq 76s linear infinite;
+}
+.strip:hover .mq-track{animation-play-state:paused;}
+.mq-col{display:flex;flex-direction:column;gap:8px;height:264px;flex:none;}
+.mq-col.tall{width:190px;}
+.mq-col.wide{width:300px;}
+.mq-col.pair{width:232px;}
+.mq-col img{display:block;width:100%;object-fit:cover;border-radius:5px;}
+.mq-col.tall img,.mq-col.wide img{height:100%;}
+.mq-col.pair img{height:128px;}
+@keyframes mq{from{transform:translateX(0);}to{transform:translateX(calc(-50% - 4px));}}
+@media(max-width:768px){
+  .mq-col{height:200px;}
+  .mq-col.tall{width:142px;}
+  .mq-col.wide{width:224px;}
+  .mq-col.pair{width:172px;}
+  .mq-col.pair img{height:96px;}
+  .mq-track{animation-duration:56s;}
+}
+@media(prefers-reduced-motion:reduce){
+  .mq-track{animation:none;}
+}
+@media(max-width:768px){ .strip-row img{height:110px;} .strip-row img:nth-child(n+5){display:none;} }
+
+/* ---------- seasons ring ---------- */
+.seasons{background:var(--forest-flat);border-block:0;position:relative;overflow:hidden;}
+.seasons .sec-en{color:#ffe3a8;}
+.seasons .sec-head h2{color:#fff;}
+.seasons .sec-head h2::after{background:#ffd479;}
+.seasons .sec-head p{color:rgba(255,255,255,.88);}
+.seasons .season-months{color:rgba(255,255,255,.7);}
+.seasons .season-head h3{color:#fff;}
+.seasons .season-head p{color:rgba(255,255,255,.86);}
+.seasons .season-row{border-bottom:1px dashed rgba(255,255,255,.28);}
+.seasons .season-note{color:#fff;background:rgba(255,255,255,.14);border-radius:999px;display:inline-block;padding:10px 26px;margin-inline:auto;}
+.season-note-wrap{text-align:center;}
+.seasons .season-icon svg circle:first-child{opacity:.92;}
+.trees{position:absolute;left:0;right:0;pointer-events:none;opacity:.34;height:34px;overflow:hidden;}
+.trees svg{width:100%;height:auto;display:block;}
+.trees.top{top:0;}
+.trees.bottom{bottom:0;transform:scaleY(-1);}
+.season-row{
+  display:grid;grid-template-columns:250px 1fr;gap:30px;align-items:start;
+  padding:26px 0;border-bottom:1px dashed var(--paper-3);position:relative;
+}
+.season-row:last-of-type{border-bottom:0;}
+.season-head{display:flex;gap:14px;align-items:flex-start;position:relative;padding-left:16px;padding-top:6px;}
+.season-head::before{content:"";position:absolute;left:0;top:4px;bottom:4px;width:4px;border-radius:2px;}
+.season-row.sp .season-head::before{background:var(--spring);}
+.season-row.sh .season-head::before{background:linear-gradient(180deg,var(--spring),var(--summer));}
+.season-row.aw .season-head::before{background:linear-gradient(180deg,var(--autumn),var(--winter));}
+.season-row.su .season-head::before{background:var(--summer);}
+.season-row.au .season-head::before{background:var(--autumn);}
+.season-row.wi .season-head::before{background:var(--camp);}
+.season-icon{flex:none;width:58px;}
+.season-icon svg{width:58px;height:58px;display:block;}
+.season-months{font-size:.72rem;font-weight:700;letter-spacing:.12em;color:var(--ink-soft);}
+.season-head h3{margin:2px 0 7px;font-size:1.3rem;font-weight:900;line-height:1.3;}
+.season-head p{margin:0;font-size:.86rem;color:var(--ink-soft);line-height:1.8;}
+.media-strip{
+  display:grid;grid-template-columns:repeat(auto-fill,minmax(166px,1fr));gap:12px;
+}
+.photo-wall{padding-top:6px;}
+.wall-grid{column-count:4;column-gap:10px;}
+.wall-grid figure{
+  break-inside:avoid;margin:0 0 10px;position:relative;overflow:hidden;
+  border-radius:12px;background:rgba(255,255,255,.14);
+}
+.wall-grid img,.wall-grid video{
+  width:100%;height:auto;display:block;
+  transition:transform .55s cubic-bezier(.2,.7,.3,1);
+}
+.wall-grid video{aspect-ratio:4/3;object-fit:cover;}
+.wall-grid figure:not(.is-video){cursor:zoom-in;}
+.wall-grid figure:hover img{transform:scale(1.06);}
+.wall-grid figure.is-video::before{
+  content:"";position:absolute;left:11px;top:11px;z-index:2;width:24px;height:24px;border-radius:50%;
+  background:rgba(35,48,42,.55) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23fff'%3E%3Cpath d='M9 7l9 5-9 5z'/%3E%3C/svg%3E") center/14px no-repeat;
+  backdrop-filter:blur(3px);
+}
+@media(max-width:1000px){
+  .wall-grid{column-count:3;column-gap:8px;}
+  .wall-grid figure{margin-bottom:8px;}
+}
+@media(max-width:600px){
+  .wall-grid{column-count:2;column-gap:7px;}
+  .wall-grid figure{margin-bottom:7px;border-radius:10px;}
+}
+
+/* lightbox */
+.lb{
+  position:fixed;inset:0;z-index:999;display:none;
+  background:rgba(20,28,24,.93);
+  align-items:center;justify-content:center;padding:28px;
+}
+.lb.open{display:flex;}
+.lb img{max-width:100%;max-height:100%;border-radius:10px;display:block;}
+.lb button{
+  position:absolute;border:0;background:rgba(255,255,255,.14);color:#fff;
+  width:46px;height:46px;border-radius:50%;cursor:pointer;
+  font-size:1.3rem;line-height:1;display:grid;place-items:center;
+}
+.lb button:hover{background:rgba(255,255,255,.26);}
+.lb .lb-close{top:18px;right:18px;}
+.lb .lb-prev{left:16px;top:50%;margin-top:-23px;}
+.lb .lb-next{right:16px;top:50%;margin-top:-23px;}
+.lb .lb-count{
+  position:absolute;bottom:18px;left:50%;transform:translateX(-50%);
+  color:rgba(255,255,255,.75);font-size:.82rem;font-weight:700;letter-spacing:.08em;
+}
+@media(max-width:600px){
+  .lb{padding:14px;}
+  .lb button{width:40px;height:40px;}
+  .lb .lb-prev{left:8px;}
+  .lb .lb-next{right:8px;}
+}
+.media-strip figure{
+  margin:0;min-width:0;
+  background:#fff;border:1px solid var(--paper-3);border-radius:14px;overflow:hidden;box-shadow:var(--shadow);
+}
+.media-strip figure.is-video{position:relative;}
+.media-strip figure.is-video::before{
+  content:"";position:absolute;left:10px;top:10px;z-index:2;width:22px;height:22px;border-radius:50%;
+  background:rgba(35,48,42,.55) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23fff'%3E%3Cpath d='M9 7l9 5-9 5z'/%3E%3C/svg%3E") center/13px no-repeat;
+  backdrop-filter:blur(3px);
+}
+.media-strip img,.media-strip video{width:100%;aspect-ratio:4/3;object-fit:cover;display:block;background:#e9e4d8;}
+.media-strip figcaption{font-size:.76rem;color:var(--ink-soft);padding:9px 12px 11px;font-weight:700;line-height:1.5;}
+.season-note{text-align:center;margin-top:30px;font-weight:700;color:var(--forest);font-size:1rem;}
+
+/* ---------- about cards ---------- */
+.three{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+.card{background:#fff;border:1px solid var(--paper-3);border-radius:var(--radius);padding:30px 26px;box-shadow:var(--shadow);}
+.card .num{font-size:.7rem;letter-spacing:.2em;font-weight:700;color:var(--gold);}
+.card h3{margin:10px 0 12px;font-size:1.12rem;font-weight:900;line-height:1.6;}
+.card p{margin:0;font-size:.92rem;color:var(--ink-soft);}
+.card svg{width:56px;height:56px;margin-bottom:6px;}
+
+.origin{margin-top:0;background:var(--forest);color:var(--paper);border-radius:22px;padding:40px 38px;display:grid;grid-template-columns:auto 1fr;gap:34px;align-items:center;}
+.origin .mark{text-align:center;}
+.origin .mark strong{display:block;font-size:2.5rem;font-weight:900;line-height:1.15;letter-spacing:.06em;}
+.origin .mark span{font-size:.68rem;letter-spacing:.24em;opacity:.8;}
+.origin h3{margin:0 0 12px;font-size:1.22rem;font-weight:900;}
+.origin p{margin:0;font-size:.94rem;opacity:.94;}
+
+/* ---------- hop / soar ---------- */
+.classes{background:var(--paper-2);border-block:1px solid var(--paper-3);}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:22px;}
+.cls{background:var(--paper);border:1px solid var(--paper-3);border-radius:var(--radius);overflow:hidden;display:flex;flex-direction:column;}
+.cls-top{padding:26px 28px 20px;position:relative;}
+.cls.hop .cls-top{background:linear-gradient(180deg,rgba(79,157,105,.14),transparent);}
+.cls.soar .cls-top{background:linear-gradient(180deg,rgba(109,139,163,.16),transparent);}
+.cls-badge{display:inline-block;font-size:.72rem;font-weight:700;letter-spacing:.14em;padding:5px 12px;border-radius:999px;color:#fff;}
+.cls.hop .cls-badge{background:var(--summer);}
+.cls.soar .cls-badge{background:var(--winter);}
+.cls h3{margin:12px 0 4px;font-size:1.9rem;font-weight:900;letter-spacing:.06em;}
+.cls .age{font-size:.86rem;font-weight:700;color:var(--ink-soft);}
+.cls-body{padding:6px 28px 28px;}
+.cls-catch{font-weight:900;font-size:1.02rem;margin:0 0 10px;color:var(--forest);}
+.cls-body p{margin:0 0 16px;font-size:.92rem;color:var(--ink-soft);}
+.cls-acts{background:#fff;border:1px dashed var(--paper-3);border-radius:14px;padding:16px 18px;}
+.cls-acts b{display:block;font-size:.76rem;letter-spacing:.1em;color:var(--gold);margin-bottom:6px;}
+.cls-acts span{font-size:.88rem;color:var(--ink-soft);}
+.same-day{margin-top:22px;background:#fff;border:1px solid var(--paper-3);border-radius:14px;padding:18px 22px;font-size:.9rem;color:var(--ink-soft);text-align:center;}
+.same-day b{color:var(--forest);}
+
+/* ---------- timeline ---------- */
+.tl{position:relative;max-width:820px;margin:0 auto;padding-left:64px;}
+.tl::before{
+  content:"";position:absolute;left:23px;top:8px;bottom:8px;width:4px;border-radius:2px;
+  background:linear-gradient(180deg,var(--spring) 0%,var(--summer) 34%,var(--autumn) 64%,var(--winter) 88%,var(--camp) 100%);
+}
+.tl-item{position:relative;margin-bottom:34px;}
+.tl-item::before{
+  content:"";position:absolute;left:-52px;top:6px;width:20px;height:20px;border-radius:50%;
+  background:var(--paper);border:4px solid var(--c,var(--summer));
+}
+.tl-item.camp::before{border-color:var(--camp);background:var(--camp);box-shadow:0 0 0 5px rgba(224,112,47,.18);}
+.tl-month{display:flex;align-items:center;gap:10px;font-weight:900;font-size:1.06rem;margin-bottom:8px;}
+.tl-month .m{color:var(--c,var(--summer));font-size:1.3rem;}
+.tl-month .tag{font-size:.7rem;font-weight:700;letter-spacing:.08em;background:var(--paper-2);border:1px solid var(--paper-3);color:var(--ink-soft);border-radius:999px;padding:3px 10px;}
+.tl-card{background:#fff;border:1px solid var(--paper-3);border-radius:16px;padding:20px 24px;box-shadow:var(--shadow);}
+.tl-item.camp .tl-card{border-color:rgba(224,112,47,.45);background:linear-gradient(180deg,rgba(224,112,47,.08),#fff 60%);}
+.tl-row{padding:10px 0;border-bottom:1px dashed var(--paper-3);}
+.tl-row:last-child{border-bottom:0;padding-bottom:0;}
+.tl-row:first-child{padding-top:0;}
+.tl-row b{display:inline-block;font-size:.74rem;font-weight:700;letter-spacing:.1em;color:#fff;border-radius:999px;padding:3px 11px;margin-bottom:5px;}
+.tl-row b.hop{background:var(--summer);}
+.tl-row b.soar{background:var(--winter);}
+.tl-row b.both{background:var(--forest);}
+.tl-row strong{display:block;font-size:.98rem;font-weight:900;margin-bottom:3px;}
+.tl-row p{margin:0;font-size:.88rem;color:var(--ink-soft);}
+.tl-note{max-width:820px;margin:8px auto 0;padding-left:64px;font-size:.86rem;color:var(--ink-soft);}
+.tl-note .box{background:var(--paper-2);border:1px solid var(--paper-3);border-radius:14px;padding:14px 18px;}
+
+/* ---------- camp film ---------- */
+.campfilm{background:var(--forest-deep);color:var(--paper);}
+.campfilm .sec-en{color:var(--gold);}
+.campfilm .sec-head h2{color:var(--paper);}
+.campfilm .sec-head h2::after{background:var(--gold);}
+.campfilm .sec-head p{color:rgba(250,247,240,.82);}
+.film{
+  max-width:880px;margin:0 auto;border-radius:22px;overflow:hidden;
+  border:6px solid rgba(250,247,240,.14);
+  box-shadow:0 20px 50px rgba(0,0,0,.35);
+  background:#000;position:relative;
+}
+.film video{width:100%;aspect-ratio:16/9;height:auto;object-fit:cover;display:block;background:#000;}
+.film-tag{
+  position:absolute;left:16px;top:16px;z-index:2;
+  background:rgba(29,63,49,.72);border:1px solid rgba(250,247,240,.28);
+  color:var(--paper);font-size:.72rem;font-weight:700;letter-spacing:.08em;
+  padding:6px 13px;border-radius:999px;backdrop-filter:blur(6px);
+}
+.film-cap{text-align:center;margin:18px auto 0;max-width:640px;font-size:.84rem;color:rgba(250,247,240,.72);}
+@media(prefers-reduced-motion:reduce){.film video{display:none;}.film{background:center/cover no-repeat;}}
+
+/* ---------- teachers ---------- */
+.teachers{background:var(--paper);}
+.teachers .sec-head h2{line-height:1.5;}
+.teacher-grid{display:grid;grid-template-columns:1fr;gap:18px;max-width:880px;margin-inline:auto;}
+.teacher{
+  background:#fff;border:1px solid var(--paper-3);border-radius:var(--radius);
+  padding:28px 30px;box-shadow:var(--shadow);
+  display:grid;grid-template-columns:100px 1fr;gap:26px;align-items:start;
+}
+.t-avatar{
+  width:100px;height:100px;border-radius:50%;
+  background:var(--av);display:flex;align-items:center;justify-content:center;
+  box-shadow:0 3px 0 rgba(35,48,42,.12);overflow:hidden;
+}
+.t-avatar span{color:#fff;font-size:2.1rem;font-weight:900;line-height:1;}
+.t-avatar img{width:100%;height:100%;object-fit:cover;display:block;}
+.t-avatar.soon{background:var(--paper-2);border:1px dashed #c9bfa8;box-shadow:none;}
+.t-avatar.soon span{
+  color:var(--ink-soft);font-size:.68rem;font-weight:700;
+  line-height:1.5;text-align:center;letter-spacing:.02em;
+}
+.t-avatar.soon svg{display:block;width:21px;height:21px;margin:0 auto 5px;fill:#b5aa92;}
+.t-role{
+  display:inline-block;margin:0 0 8px;padding:4px 12px;border-radius:999px;
+  background:var(--paper-2);border:1px solid var(--paper-3);
+  font-size:.72rem;font-weight:700;color:var(--ink-soft);letter-spacing:.04em;
+}
+.teacher h3{margin:0 0 10px;font-size:1.14rem;font-weight:900;}
+.t-real{margin-left:10px;font-size:.82rem;font-weight:700;color:var(--ink-soft);}
+.t-bio{margin:0 0 18px;font-size:.92rem;line-height:1.9;font-weight:800;color:var(--ink);}
+.t-label{display:block;margin:0 0 7px;font-size:.86rem;font-weight:900;color:var(--forest);}
+.t-label::before{
+  content:"";display:inline-block;width:14px;height:3px;border-radius:2px;
+  background:var(--gold);vertical-align:middle;margin-right:9px;
+}
+.t-person{margin:0;font-size:.92rem;line-height:1.95;color:var(--ink-soft);}
+.t-quote{
+  margin:0;padding:12px 16px;border-left:3px solid var(--gold);
+  background:var(--paper-2);border-radius:0 10px 10px 0;
+  font-size:.88rem;font-weight:700;color:var(--forest);
+}
+.t-quote::before{content:"「";}
+.t-quote::after{content:"」";}
+.teacher-note{
+  max-width:760px;margin:30px auto 0;text-align:center;
+  font-size:.88rem;color:var(--ink-soft);
+}
+
+@media(max-width:560px){
+  .teacher{grid-template-columns:1fr;gap:16px;padding:22px 20px;justify-items:start;}
+  .t-avatar{width:72px;height:72px;}
+  .t-person{font-size:.9rem;line-height:1.9;}
+  .t-avatar span{font-size:1.6rem;}
+  .t-avatar.soon span{font-size:.6rem;}
+  .t-avatar.soon svg{width:17px;margin-bottom:3px;}
+  .t-br{display:none;}
+}
+
+/* ---------- values ---------- */
+.values{background:var(--paper-2);border-block:1px solid var(--paper-3);}
+.vgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
+.v{background:var(--paper);border:1px solid var(--paper-3);border-radius:var(--radius);padding:26px 24px;}
+.v svg{width:44px;height:44px;margin-bottom:10px;}
+.v h3{margin:0 0 9px;font-size:1rem;font-weight:900;line-height:1.6;}
+.v p{margin:0;font-size:.88rem;color:var(--ink-soft);}
+
+/* ---------- price / class info ---------- */
+.venues{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:26px;}
+.venue{background:#fff;border:1px solid var(--paper-3);border-radius:var(--radius);padding:26px 28px;box-shadow:var(--shadow);}
+.venue h3{margin:0 0 4px;font-size:1.26rem;font-weight:900;}
+.venue .day{display:inline-block;font-size:.78rem;font-weight:700;color:#fff;background:var(--forest);border-radius:999px;padding:4px 13px;margin-bottom:12px;}
+.venue dl{margin:0;display:grid;grid-template-columns:auto 1fr;gap:8px 16px;font-size:.9rem;}
+.venue dt{color:var(--ink-soft);font-weight:700;white-space:nowrap;}
+.venue dd{margin:0;}
+.venue .pillrow{margin-top:14px;display:flex;gap:8px;flex-wrap:wrap;}
+.venue .pill{font-size:.76rem;font-weight:700;border-radius:999px;padding:4px 12px;color:#fff;}
+.pill.hop{background:var(--summer);}
+.pill.soar{background:var(--winter);}
+
+.price{background:var(--forest);color:var(--paper);border-radius:22px;padding:38px 36px;}
+.price-top{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;border-bottom:1px solid rgba(250,247,240,.2);padding-bottom:20px;margin-bottom:20px;}
+.price-top .amount{font-size:2.6rem;font-weight:900;letter-spacing:.02em;}
+.price-top .unit{font-size:1rem;font-weight:700;opacity:.9;}
+.price-top .tag{margin-left:auto;font-size:.82rem;background:rgba(250,247,240,.14);border:1px solid rgba(250,247,240,.3);border-radius:999px;padding:6px 14px;font-weight:700;}
+.disc{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+.disc div{background:rgba(250,247,240,.1);border:1px solid rgba(250,247,240,.2);border-radius:14px;padding:16px 18px;}
+.disc b{display:block;font-size:.92rem;margin-bottom:4px;}
+.disc span{font-size:.84rem;opacity:.9;}
+.price-note{margin:18px 0 0;font-size:.86rem;opacity:.92;line-height:1.85;}
+
+/* ---------- gallery ---------- */
+/* ---------- faq ---------- */
+.faq{max-width:820px;margin:0 auto;}
+.qa{background:#fff;border:1px solid var(--paper-3);border-radius:16px;padding:22px 26px;margin-bottom:14px;}
+.qa h3{margin:0 0 8px;font-size:1rem;font-weight:900;display:flex;gap:10px;align-items:flex-start;}
+.qa h3 span{color:var(--gold);font-weight:900;flex:none;}
+.qa p{margin:0 0 0 26px;font-size:.9rem;color:var(--ink-soft);}
+.qa p + p{margin-top:8px;}
+
+/* ---------- cta ---------- */
+.cta{background:var(--paper-2);border-block:1px solid var(--paper-3);text-align:center;}
+.cta h2{font-size:clamp(1.4rem,3.4vw,1.9rem);font-weight:900;margin:0 0 14px;}
+.cta p{color:var(--ink-soft);margin:0 auto 26px;max-width:560px;font-size:.95rem;}
+.cta .btn{margin:0 6px 10px;}
+.cta .small{font-size:.82rem;margin-top:10px;}
+
+/* ---------- related ---------- */
+.rel{display:grid;grid-template-columns:1fr 1fr;gap:18px;}
+.rel a{background:#fff;border:1px solid var(--paper-3);border-radius:var(--radius);padding:24px 26px;text-decoration:none;display:block;box-shadow:var(--shadow);transition:transform .15s ease;}
+.rel a:hover{transform:translateY(-2px);}
+.rel b{display:block;font-size:1.05rem;font-weight:900;margin-bottom:6px;}
+.rel span{display:block;font-size:.88rem;color:var(--ink-soft);}
+.rel .arrow{color:var(--forest);font-weight:900;font-size:.85rem;margin-top:10px;display:inline-block;}
+
+/* ---------- footer ---------- */
+footer{background:var(--forest-deep);color:rgba(250,247,240,.9);padding:52px 0 32px;}
+.fgrid{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:34px;margin-bottom:32px;}
+footer img.flogo{width:150px;height:auto;filter:invert(1);margin-bottom:16px;}
+footer p{font-size:.86rem;margin:0;opacity:.85;line-height:1.85;}
+footer h4{font-size:.78rem;letter-spacing:.16em;margin:0 0 12px;opacity:.7;font-weight:700;}
+footer ul{list-style:none;margin:0;padding:0;}
+footer li{margin-bottom:9px;}
+footer a{text-decoration:none;font-size:.88rem;opacity:.9;}
+footer a:hover{text-decoration:underline;}
+.fbottom{border-top:1px solid rgba(250,247,240,.16);padding-top:20px;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;font-size:.8rem;opacity:.75;}
+
+/* ---------- responsive ---------- */
+@media(max-width:900px){
+  .hero-inner{grid-template-columns:1fr;gap:28px;}
+  .three,.vgrid{grid-template-columns:1fr 1fr;}
+  .season-row{grid-template-columns:1fr;gap:18px;}
+  .origin{grid-template-columns:1fr;gap:20px;text-align:center;}
+  }
+@media(max-width:1060px){
+  nav.main,.hbar .btn{display:none;}
+  .burger{display:flex;}
+}
+@media(max-width:768px){
+  .two,.venues,.rel,.disc{grid-template-columns:1fr;}
+  section{padding:62px 0;}
+  .tl{padding-left:46px;}
+  .tl::before{left:14px;}
+  .tl-item::before{left:-41px;width:17px;height:17px;}
+  .tl-note{padding-left:46px;}
+  .price{padding:28px 24px;}
+  .origin{padding:30px 24px;}
+}
+@media(max-width:560px){
+  .three,.vgrid{grid-template-columns:1fr;}
+  .media-strip{grid-template-columns:repeat(2,1fr);gap:9px;}
+  .media-strip.wall{grid-template-columns:repeat(2,1fr);gap:8px;}
+  .media-strip figcaption{font-size:.72rem;padding:7px 9px 9px;}
+  .hero{padding-top:44px;}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap hbar">
+    <a class="hlogo" href="#top">
+      <img class="mark" src="assets/mark.png" alt="">
+      <img class="wm" src="assets/wordmark.png" alt="クスカ KIDS SMALL CAMP">
+    </a>
+    <nav class="main">
+      <a href="#about">クスカについて</a>
+      <a href="#class">クラス</a>
+      <a href="#teachers">先生の紹介</a>
+      <a href="#program">プログラム</a>
+      <a href="#info">料金・開催日</a>
+      <a href="#faq">よくある質問</a>
+    </nav>
+    <a class="btn btn-ghost" href="https://taikikurono-art.github.io/ksca-members/" target="_blank" rel="noopener">会員の方はこちら</a>
+    <a class="btn btn-line" href="https://lin.ee/s6IoexC" target="_blank" rel="noopener">体験を申し込む</a>
+    <div class="burger" id="burger" role="button" aria-label="メニュー" tabindex="0"><span></span></div>
+  </div>
+  <div class="drawer wrap" id="drawer">
+    <a href="#about">クスカについて</a>
+    <a href="#class">クラス（HOP / SOAR）</a>
+    <a href="#teachers">先生の紹介</a>
+    <a href="#program">年間プログラム</a>
+    <a href="#info">料金・開催日</a>
+    <a href="#faq">よくある質問</a>
+    <a class="btn btn-line" href="https://lin.ee/s6IoexC" target="_blank" rel="noopener">公式LINEで体験を申し込む</a>
+    <a class="btn btn-ghost" href="https://taikikurono-art.github.io/ksca-members/" target="_blank" rel="noopener">会員の方はこちら</a>
+  </div>
+</header>
+
+<a class="side-cta" href="https://lin.ee/s6IoexC" target="_blank" rel="noopener"><span>体験レッスンはこちら</span></a>
+
+<main id="top">
+
+<!-- ===== HERO ===== -->
+<section class="hero">
+  <div class="wrap hero-inner">
+    <div>
+      <span class="eyebrow">年中〜小学生／通年制の自然体験教室</span>
+      <h1>自然の中で、<br><em>子どもの未来</em>を育む。</h1>
+      <p class="lead">クスカは、名古屋・春日井の子どもたちが、月に一度、同じ仲間と一緒に自然の中で過ごす通年制の教室です。</p>
+      <div class="hero-cta">
+        <a class="btn btn-line btn-lg" href="https://lin.ee/s6IoexC" target="_blank" rel="noopener">公式LINEで体験を申し込む</a>
+        <a class="btn btn-ghost btn-lg" href="#about">クスカについて知る</a>
+      </div>
+      <div class="facts">
+        <div class="fact"><b>年中〜小学生</b>／HOP・SOARの2グループ</div>
+        <div class="fact"><b>月1回・年12回</b>の通年プログラム</div>
+        <div class="fact"><b>駅に集合・駅で解散</b>／送り迎えは不要</div>
+      </div>
+    </div>
+    <div class="hero-art">
+      <figure class="hero-photo">
+        <img src="assets/herophoto.jpg" alt="川の中で網を持ち、水しぶきをあげて遊ぶ子どもたち" width="1300" height="866">
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PHOTO STRIP ===== -->
+<section class="strip" aria-label="活動の様子">
+  <div class="mq-track">
+      <div class="mq-col tall">
+        <img src="assets/photo-boardwalk.jpg" alt="" loading="lazy">
+      </div>
+      <div class="mq-col pair">
+        <img src="assets/photo-hangou2.jpg" alt="" loading="lazy">
+        <img src="assets/photo-bento.jpg" alt="" loading="lazy">
+      </div>
+      <div class="mq-col wide">
+        <img src="assets/photo-rain4.jpg" alt="" loading="lazy">
+      </div>
+      <div class="mq-col tall">
+        <img src="assets/photo-train.jpg" alt="" loading="lazy">
+      </div>
+      <div class="mq-col pair">
+        <img src="assets/photo-net.jpg" alt="" loading="lazy">
+        <img src="assets/photo-somen.jpg" alt="" loading="lazy">
+      </div>
+      <div class="mq-col tall">
+        <img src="assets/photo-riverg.jpg" alt="" loading="lazy">
+      </div>
+      <div class="mq-col pair">
+        <img src="assets/photo-match.jpg" alt="" loading="lazy">
+        <img src="assets/photo-halloween.jpg" alt="" loading="lazy">
+      </div>
+      <div class="mq-col wide">
+        <img src="assets/photo-carrot.jpg" alt="" loading="lazy">
+      </div>
+      <div class="mq-col pair">
+        <img src="assets/photo-pizzaeat.jpg" alt="" loading="lazy">
+        <img src="assets/photo-tomato.jpg" alt="" loading="lazy">
+      </div>
+      <div class="mq-col tall">
+        <img src="assets/photo-smile.jpg" alt="" loading="lazy">
+      </div>
+      <div class="mq-col pair">
+        <img src="assets/photo-nabe.jpg" alt="" loading="lazy">
+        <img src="assets/photo-tent.jpg" alt="" loading="lazy">
+      </div>
+      <div class="mq-col tall" aria-hidden="true">
+        <img src="assets/photo-boardwalk.jpg" alt="" loading="lazy">
+      </div>
+      <div class="mq-col pair" aria-hidden="true">
+        <img src="assets/photo-hangou2.jpg" alt="" loading="lazy">
+        <img src="assets/photo-bento.jpg" alt="" loading="lazy">
+      </div>
+      <div class="mq-col wide" aria-hidden="true">
+        <img src="assets/photo-rain4.jpg" alt="" loading="lazy">
+      </div>
+      <div class="mq-col tall" aria-hidden="true">
+        <img src="assets/photo-train.jpg" alt="" loading="lazy">
+      </div>
+      <div class="mq-col pair" aria-hidden="true">
+        <img src="assets/photo-net.jpg" alt="" loading="lazy">
+        <img src="assets/photo-somen.jpg" alt="" loading="lazy">
+      </div>
+      <div class="mq-col tall" aria-hidden="true">
+        <img src="assets/photo-riverg.jpg" alt="" loading="lazy">
+      </div>
+      <div class="mq-col pair" aria-hidden="true">
+        <img src="assets/photo-match.jpg" alt="" loading="lazy">
+        <img src="assets/photo-halloween.jpg" alt="" loading="lazy">
+      </div>
+      <div class="mq-col wide" aria-hidden="true">
+        <img src="assets/photo-carrot.jpg" alt="" loading="lazy">
+      </div>
+      <div class="mq-col pair" aria-hidden="true">
+        <img src="assets/photo-pizzaeat.jpg" alt="" loading="lazy">
+        <img src="assets/photo-tomato.jpg" alt="" loading="lazy">
+      </div>
+      <div class="mq-col tall" aria-hidden="true">
+        <img src="assets/photo-smile.jpg" alt="" loading="lazy">
+      </div>
+      <div class="mq-col pair" aria-hidden="true">
+        <img src="assets/photo-nabe.jpg" alt="" loading="lazy">
+        <img src="assets/photo-tent.jpg" alt="" loading="lazy">
+      </div>
+  </div>
+</section>
+
+<!-- ===== INTRO ===== -->
+<section class="intro">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="sec-en">ONE DAY</span>
+      <h2>クスカの一日</h2>
+      <p>集合してから解散するまで、まるごと活動の時間です。</p>
+    </div>
+  </div>
+  <div class="wrap intro-inner">
+    <p>駅に集合したら、そこからもうクスカの一日が始まります。<br>
+    電車に乗ったり、バスに乗ったり、自分の荷物を持って歩いたり。<br>
+    目的地に着いてからだけが「体験」ではありません。</p>
+    <p>移動は、子どもたちにとっては待ちの時間です。<br>
+    でも、だからこそ絶好のコミュニケーションの時間になります。</p>
+    <p>そんな移動の時間も、友達とのやりとりも、全部ひっくるめて子どもたちの大切な経験だと考えています。<br>
+    だから、現地までの送り迎えはいりません。</p>
+  </div>
+
+  <div class="wrap">
+    <ol class="dayflow">
+      <li>
+        <div class="df-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="8" cy="7" r="3.1" fill="#fff"/><circle cx="16.5" cy="8" r="2.5" fill="#fff"/><path d="M2.4 18.6c0-3.1 2.5-5.1 5.6-5.1s5.6 2 5.6 5.1v.9H2.4z" fill="#fff"/><path d="M14.6 19.5v-1c0-1.7-.6-3.1-1.6-4.1.5-.2 1-.3 1.6-.3 3 0 5 1.7 5 4.4v1z" fill="#fff"/></svg></div>
+        <details class="df-body">
+          <summary><b>駅に集合</b></summary>
+          <span class="df-txt">子どもたちを笑顔で受け入れ、出欠確認。今日の活動内容を全体で確認し、期待を持ってLET'S GO！</span>
+        </details>
+      </li>
+      <li>
+        <div class="df-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2c-4.2 0-7 .6-7 3.6v9.1c0 1.7 1.3 3 3 3l-1.4 1.4v.5h10.8v-.5L16 17.7c1.7 0 3-1.3 3-3V5.6C19 2.6 16.2 2 12 2zm-4.6 4.6h9.2v4H7.4zM9 16a1.4 1.4 0 1 1 0-2.8A1.4 1.4 0 0 1 9 16zm6 0a1.4 1.4 0 1 1 0-2.8A1.4 1.4 0 0 1 15 16z" fill="#fff"/></svg></div>
+        <details class="df-body">
+          <summary><b>公共交通機関でフィールドへ</b></summary>
+          <span class="df-txt">小学生以上は、自分のICカードで改札を通ります。先生との何気ない話や、仲間とのおしゃべり。この時間に、今日のその子のコンディションや、最近どんなふうに過ごしているかが見えてきます。</span>
+        </details>
+      </li>
+      <li>
+        <div class="df-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2 5.6 11h3.1L4 18.4h6.8V22h2.4v-3.6H20L15.3 11h3.1z" fill="#fff"/></svg></div>
+        <details class="df-body">
+          <summary><b>活動開始</b></summary>
+          <span class="df-txt">フィールドに到着したら、活動前に全員で学習シートを見ながら流れを確認。なんとなく流れが分かっていると、安心して活動へ臨むことができます。そして思い切り活動を楽しみます！</span>
+        </details>
+      </li>
+      <li>
+        <div class="df-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2c-4.4 0-8 .5-8 3.5V16c0 1 .5 1.9 1.3 2.4v1.7a1 1 0 0 0 1 1h1.1a1 1 0 0 0 1-1v-1.1h7.2v1.1a1 1 0 0 0 1 1h1.1a1 1 0 0 0 1-1v-1.7c.8-.5 1.3-1.4 1.3-2.4V5.5C20 2.5 16.4 2 12 2zM7.4 16.2a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm9.2 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zM18 11H6V6h12z" fill="#fff"/></svg></div>
+        <details class="df-body">
+          <summary><b>フィールド出発</b></summary>
+          <span class="df-txt">電車やバスに揺られて帰ります。活動中の話で盛り上がることもあれば、疲れてウトウトする姿も……。</span>
+        </details>
+      </li>
+      <li>
+        <div class="df-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2 2 7.2v1.9h20V7.2z" fill="#fff"/><path d="M5 10.6h2.6v7.6H5zm5.7 0h2.6v7.6h-2.6zm5.7 0H19v7.6h-2.6z" fill="#fff"/><path d="M3 19.6h18V22H3z" fill="#fff"/></svg></div>
+        <details class="df-body">
+          <summary><b>同じ駅で解散</b></summary>
+          <span class="df-txt">朝に集合した駅まで送りとどけて、おうちの方にお渡しします。帰ったら、きっと今日の話をたくさんすると思います。</span>
+        </details>
+      </li>
+    </ol>
+  </div>
+
+  <div class="wrap intro-inner">
+    <p class="intro-close">自然の中で遊ぶことはもちろん、そこへ向かうところから帰ってくるところまで。<br>
+    一日まるごと、子どもたちの育ちにつながる時間にしていきます。</p>
+  </div>
+</section>
+
+<!-- ===== SEASONS ===== -->
+<section class="seasons">
+    <div class="trees top" aria-hidden="true">
+      <svg viewBox="0 0 1200 46" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+        <g fill="#3d7c58">
+          <path d="M60 46 L74 14 L88 46Z"/><rect x="71" y="40" width="6" height="8"/>
+          <path d="M150 46 L166 8 L182 46Z"/><rect x="163" y="40" width="6" height="8"/>
+          <path d="M255 46 L268 18 L281 46Z"/><rect x="265" y="40" width="6" height="8"/>
+          <path d="M380 46 L396 10 L412 46Z"/><rect x="393" y="40" width="6" height="8"/>
+          <path d="M500 46 L513 20 L526 46Z"/><rect x="510" y="40" width="6" height="8"/>
+          <path d="M640 46 L656 12 L672 46Z"/><rect x="653" y="40" width="6" height="8"/>
+          <path d="M770 46 L783 19 L796 46Z"/><rect x="780" y="40" width="6" height="8"/>
+          <path d="M900 46 L916 9 L932 46Z"/><rect x="913" y="40" width="6" height="8"/>
+          <path d="M1030 46 L1043 21 L1056 46Z"/><rect x="1040" y="40" width="6" height="8"/>
+          <path d="M1130 46 L1146 13 L1162 46Z"/><rect x="1143" y="40" width="6" height="8"/>
+        </g>
+      </svg>
+    </div>
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="sec-en">PHOTOS</span>
+      <h2>何度も通うから、気づけることがある。</h2>
+    </div>
+    <div class="season-intro">
+      <p>クスカには、活動の拠点があります。<br>
+      毎月違う場所に行くのではなく、使い慣れた場所、遊び慣れた場所に通います。<br>
+      季節が変われば景色も変わり、遊び方も変わっていきます。春にはなかったものを夏に見つけたり、夏に遊んだ場所が冬にはまったく違って見えたり。</p>
+      <p>慣れ親しんだ場所での小さな気づきと、自分たちで楽しめることを<br>
+      少しずつ増やしていくのがクスカです。</p>
+      <p class="intro-close on-green">クスカに通いながら自然の変化に気づき、川や火や土を利用して、<br>
+      体全身で自然を感じることを大切にしています。<br>
+      それが自然への理解と、畏怖につながっていくことを期待しています。</p>
+    </div>
+      <div class="photo-wall">
+        <div class="wall-grid">
+          <figure><img src="assets/photo-boardwalk.jpg" alt="" loading="lazy"></figure>
+          <figure><img src="assets/photo-net.jpg" alt="" loading="lazy"></figure>
+          <figure><img src="assets/photo-bucket.jpg" alt="" loading="lazy"></figure>
+          <figure><img src="assets/photo-rocks.jpg" alt="" loading="lazy"></figure>
+          <figure><img src="assets/photo-riverg.jpg" alt="" loading="lazy"></figure>
+          <figure><img src="assets/photo-riverb.jpg" alt="" loading="lazy"></figure>
+          <figure><img src="assets/photo-riverpeace.jpg" alt="" loading="lazy"></figure>
+          <figure><img src="assets/photo-riverpeace2.jpg" alt="" loading="lazy"></figure>
+          <figure><img src="assets/photo-stick.jpg" alt="" loading="lazy"></figure>
+          <figure><img src="assets/photo-hands.jpg" alt="" loading="lazy"></figure>
+          <figure><img src="assets/photo-smile.jpg" alt="" loading="lazy"></figure>
+          <figure><img src="assets/photo-blueberry2.jpg" alt="" loading="lazy"></figure>
+          <figure><img src="assets/photo-tomato.jpg" alt="" loading="lazy"></figure>
+          <figure><img src="assets/photo-onion.jpg" alt="" loading="lazy"></figure>
+          <figure><img src="assets/photo-lettuce.jpg" alt="" loading="lazy"></figure>
+          <figure class="is-video"><video src="assets/season-autumn.mp4" poster="assets/poster-autumn.jpg" autoplay muted loop playsinline preload="metadata" aria-label="薪を切るところから"></video></figure>
+          <figure><img src="assets/photo-fry.jpg" alt="" loading="lazy"></figure>
+          <figure><img src="assets/photo-match.jpg" alt="" loading="lazy"></figure>
+          <figure><img src="assets/photo-hangou.jpg" alt="" loading="lazy"></figure>
+          <figure><img src="assets/photo-hangou2.jpg" alt="" loading="lazy"></figure>
+          <figure><img src="assets/photo-nabe2.jpg" alt="" loading="lazy"></figure>
+          <figure><img src="assets/photo-somencatch.jpg" alt="" loading="lazy"></figure>
+          <figure><img src="assets/photo-somen2.jpg" alt="" loading="lazy"></figure>
+          <figure><img src="assets/photo-somen.jpg" alt="" loading="lazy"></figure>
+          <figure><img src="assets/photo-pizza.jpg" alt="" loading="lazy"></figure>
+          <figure><img src="assets/photo-pizzaeat.jpg" alt="" loading="lazy"></figure>
+          <figure><img src="assets/photo-pizzaimo.jpg" alt="" loading="lazy"></figure>
+          <figure><img src="assets/photo-pizza2.jpg" alt="" loading="lazy"></figure>
+          <figure><img src="assets/photo-bento.jpg" alt="" loading="lazy"></figure>
+          <figure><img src="assets/photo-bento3.jpg" alt="" loading="lazy"></figure>
+          <figure><img src="assets/photo-bento4.jpg" alt="" loading="lazy"></figure>
+          <figure><img src="assets/photo-rain1.jpg" alt="" loading="lazy"></figure>
+          <figure><img src="assets/photo-rain2.jpg" alt="" loading="lazy"></figure>
+          <figure><img src="assets/photo-rain3.jpg" alt="" loading="lazy"></figure>
+          <figure><img src="assets/photo-rain4.jpg" alt="" loading="lazy"></figure>
+          <figure><img src="assets/photo-rain5.jpg" alt="" loading="lazy"></figure>
+          <figure><img src="assets/photo-carrot.jpg" alt="" loading="lazy"></figure>
+          <figure><img src="assets/photo-nabe.jpg" alt="" loading="lazy"></figure>
+          <figure><img src="assets/photo-tent.jpg" alt="" loading="lazy"></figure>
+          <figure><img src="assets/photo-halloween.jpg" alt="" loading="lazy"></figure>
+          <figure><img src="assets/photo-imo.jpg" alt="" loading="lazy"></figure>
+          <figure class="is-video"><video src="assets/season-winter.mp4" poster="assets/poster-winter.jpg" autoplay muted loop playsinline preload="metadata" aria-label="ランタンの灯りで、夜ごはん"></video></figure>
+        </div>
+      </div>
+  </div>
+    <div class="trees bottom" aria-hidden="true">
+      <svg viewBox="0 0 1200 46" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+        <g fill="#3d7c58">
+          <path d="M60 46 L74 14 L88 46Z"/><rect x="71" y="40" width="6" height="8"/>
+          <path d="M150 46 L166 8 L182 46Z"/><rect x="163" y="40" width="6" height="8"/>
+          <path d="M255 46 L268 18 L281 46Z"/><rect x="265" y="40" width="6" height="8"/>
+          <path d="M380 46 L396 10 L412 46Z"/><rect x="393" y="40" width="6" height="8"/>
+          <path d="M500 46 L513 20 L526 46Z"/><rect x="510" y="40" width="6" height="8"/>
+          <path d="M640 46 L656 12 L672 46Z"/><rect x="653" y="40" width="6" height="8"/>
+          <path d="M770 46 L783 19 L796 46Z"/><rect x="780" y="40" width="6" height="8"/>
+          <path d="M900 46 L916 9 L932 46Z"/><rect x="913" y="40" width="6" height="8"/>
+          <path d="M1030 46 L1043 21 L1056 46Z"/><rect x="1040" y="40" width="6" height="8"/>
+          <path d="M1130 46 L1146 13 L1162 46Z"/><rect x="1143" y="40" width="6" height="8"/>
+        </g>
+      </svg>
+    </div>
+</section>
+
+<!-- ===== CAMP FILM ===== -->
+<section class="campfilm">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="sec-en">MARCH CAMP</span>
+      <h2>3月、一年の締めくくりに。</h2>
+      <p>荷物を背負って歩き、テントを張り、火をおこして、日が暮れる。年に一度だけのキャンプは、それまでの活動で身につけたことを全部つなげる日です。</p>
+    </div>
+    <div class="film">
+      <span class="film-tag">クスカキャンプ ダイジェスト</span>
+      <video src="assets/camp-film.mp4" poster="assets/poster-camp.jpg" autoplay muted loop playsinline preload="metadata" aria-label="クスカキャンプの様子（テント設営から夜のランタンまで）"></video>
+    </div>
+    <p class="film-cap">※ 実際のクスカキャンプの様子です（音声なし・約20秒でくり返し再生されます）。</p>
+  </div>
+</section>
+
+<!-- ===== ABOUT ===== -->
+<section id="about">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="sec-en">ABOUT</span>
+      <h2>「クスカ」という名前のこと</h2>
+    </div>
+    <div class="origin">
+      <div class="mark">
+        <img src="assets/lockup.png" alt="クスカ KIDS SMALL CAMP" style="width:168px;filter:invert(1);margin-inline:auto;">
+      </div>
+      <div>
+        <h3>名前の由来は「Kids Small Camp in Aichi」</h3>
+        <p>いちばん大事にしているのは真ん中の <b>Small</b>。人数が少ない、という意味ではありません。学年も年齢もちがう子どもたちが、ひとつの家族のようなかたまりになる。そのくらいの近さでいたい、という意味の Small です。人数が増えても、名前で呼び合える関係のまま大きくなっていきたいと思っています。Camp は年に一度のクライマックス。ふだんは日帰りで自然に会いに行きます。愛知でやっている教室なので、最後に in Aichi を重ねました。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CLASS ===== -->
+<section id="class" class="classes">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="sec-en">HOP &amp; SOAR</span>
+      <h2>学年でわかれる、2つのグループ</h2>
+      <p>同じ活動日のなかで、年齢に合わせた内容を用意しています。学年の離れた兄弟姉妹も同じ日に参加できます。</p>
+    </div>
+    <div class="two">
+      <div class="cls hop">
+        <div class="cls-top">
+          <span class="cls-badge">はじめの一歩を踏み出そう</span>
+          <h3>HOP</h3>
+          <div class="age">年中児 〜 小学校低学年</div>
+        </div>
+        <div class="cls-body">
+          <p class="cls-catch">自然の中でワクワクしよう</p>
+          <p>つくる・たべる・あそぶ。さまざまな経験を通して「好奇心」や「探究心」を育みます。森・川・土とふれあいながら、五感をフルに使って遊ぶ時間です。</p>
+          <div class="cls-acts">
+            <b>おもな活動</b>
+            <span>川遊び／火付け体験／アウトドアクッキング／流しそうめん／テント泊／季節のネイチャープログラム など</span>
+          </div>
+        </div>
+      </div>
+      <div class="cls soar">
+        <div class="cls-top">
+          <span class="cls-badge">より高く、大きく羽ばたこう</span>
+          <h3>SOAR</h3>
+          <div class="age">小学校中学年 〜 高学年</div>
+        </div>
+        <div class="cls-body">
+          <p class="cls-catch">「楽しむ側」から、「場をつくる側」へ</p>
+          <p>HOPで遊びながら学んだ子が、今度は場をつくる側にまわります。準備をして、下の学年の分まで作って、片付けまで引き受ける。大人がやったほうが早いことを、あえて子どもに託していく学年です。うまくいかないことも含めて、仲間と動く時間になります。</p>
+          <div class="cls-acts">
+            <b>おもな活動</b>
+            <span>野外炊飯／さまざまな火付けに挑戦／川遊び／テント泊 ほか。なるべく子どもたちが主体で動きます</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <p class="same-day"><b>HOPとSOARは同日開催です。</b>学年が離れている兄弟姉妹でも、同じ活動日にそろって参加できます。</p>
+  </div>
+</section>
+
+<!-- ===== TEACHERS ===== -->
+<section id="teachers" class="teachers">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="sec-en">OUR TEAM</span>
+      <h2>クスカを支える先生たち</h2>
+      <p>クスカのスタッフは学生ではなく、全員が保育の現場をしっかり経験してきた先生たちです。個性豊かな子どもたちをしっかり受け止める、強くてやさしいクスカの屋台骨です。</p>
+    </div>
+    <div class="teacher-grid">
+      <div class="teacher">
+        <div class="t-avatar"><img src="assets/teacher-taiki.jpg" alt="たいき先生" loading="lazy"></div>
+        <div class="t-body">
+          <span class="t-role">代表・引率</span>
+          <h3>たいき先生<span class="t-real">黒野 大樹</span></h3>
+          <p class="t-bio">私立幼稚園に7年。子どもたちが自然で遊ぶ姿に魅了されて、2018年から子どもたちとの野遊び活動をはじめ、2023年よりクスカを立ち上げました。</p>
+          <span class="t-label">こんな先生です！</span>
+          <p class="t-person">クスカの大黒柱として、子どもたちの成長を見守っているお父さん的な存在です。グループは持たずに全体の様子を見ながら、プログラムを進めています。自然体験を通して、一人ひとりに必要な育ちを後押しできるような活動を目指しています。</p>
+        </div>
+      </div>
+      <div class="teacher">
+        <div class="t-avatar soon"><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9.2 3.5 8.1 5.4H4.6A2.1 2.1 0 0 0 2.5 7.5v11a2.1 2.1 0 0 0 2.1 2.1h14.8a2.1 2.1 0 0 0 2.1-2.1v-11a2.1 2.1 0 0 0-2.1-2.1h-3.5l-1.1-1.9zM12 18a5 5 0 1 1 0-10 5 5 0 0 1 0 10zm0-2.2a2.8 2.8 0 1 0 0-5.6 2.8 2.8 0 0 0 0 5.6z"/></svg>写真<br>準備中</span></div>
+        <div class="t-body">
+          <span class="t-role">レギュラースタッフ</span>
+          <h3>きょうすけ先生</h3>
+          <p class="t-bio">私立保育園に13年。いまは療育の現場で小学校などへの訪問支援をしながら、JUMP UP体操教室の講師もしています。</p>
+          <span class="t-label">こんな先生です！</span>
+          <p class="t-person">子どもたちからちょっかいをかけられることも多い、とてもフレンドリーな先生です。保育士の経験が豊富で、仲良くなりながらも、子ども同士のトラブルや困った場面では、伝わりやすい言葉で諭して導くのが上手。子どもたちの成長を一番に考えている真面目な先生ですが、ツッコミどころ満載の、ちょっぴり天然なところもあります。</p>
+        </div>
+      </div>
+      <div class="teacher">
+        <div class="t-avatar"><img src="assets/teacher-hitoe.jpg" alt="ひとえ先生" loading="lazy"></div>
+        <div class="t-body">
+          <span class="t-role">レギュラースタッフ</span>
+          <h3>ひとえ先生</h3>
+          <p class="t-bio">小規模保育園に8年。いまも保育の現場で働きながら、フォトグラファーとしても活動しています。</p>
+          <span class="t-label">こんな先生です！</span>
+          <p class="t-person">子どもと接する姿がとても自然体で、子どもたちのほうから心を開いていく雰囲気を持った先生です。保育士としての力はもちろん、何事もチャレンジしよう、という前向きさの持ち主。そのアクティブなところが、子どもたちは大好きです。</p>
+        </div>
+      </div>
+      <div class="teacher">
+        <div class="t-avatar"><img src="assets/teacher-satomi.jpg" alt="さとみ先生" loading="lazy"></div>
+        <div class="t-body">
+          <span class="t-role">レギュラースタッフ</span>
+          <h3>さとみ先生</h3>
+          <p class="t-bio">私立幼稚園・公立保育園であわせて約15年。学生時代からキャンプやスキーツアーの引率など、野外活動に関わってきました。</p>
+          <span class="t-label">こんな先生です！</span>
+          <p class="t-person">明るく、保護者の方にも気さくに話しかけてくれる、ユーモアたっぷりの先生です。豊富な保育経験から、些細な子どもの心の揺れ動きにも気づき、その時その子に必要な関わりを自然に行ってくれます。2人の子どもを育てるママでもあり、保護者の方と子どもの育ちを一緒に喜べる先生です。</p>
+        </div>
+      </div>
+    </div>
+    <p class="teacher-note">クスカは毎回、2名以上のスタッフで引率します。全員が保育や教育の現場で子どもと関わってきた経験を持っていて、ほとんどの回に同じ顔ぶれが入ります。</p>
+  </div>
+</section>
+
+<!-- ===== PROGRAM ===== -->
+<section id="program">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="sec-en">YEARLY PROGRAM</span>
+      <h2>2026年度 年間プログラム</h2>
+      <p>季節に合わせて内容が変わり、3月のキャンプへ向けて少しずつ積み上がっていきます。日付は会員の方に公式LINEでご案内しています。</p>
+    </div>
+
+    <div class="tl">
+      <div class="tl-item" style="--c:var(--spring)">
+        <div class="tl-month"><span class="m">4月</span>グループ別活動<span class="tag">春のはじまり</span></div>
+        <div class="tl-card">
+          <div class="tl-row"><b class="hop">HOP</b><strong>宝探し</strong><p>公園内に隠されたポイントを探して、グループで力を合わせて“おいしいお宝”を見つけよう。</p></div>
+          <div class="tl-row"><b class="soar">SOAR</b><strong>タープ張りにチャレンジ</strong><p>テントに続いて、今度はタープを自分たちの力で張ってみます。グループの団結力が成功のカギ。</p></div>
+        </div>
+      </div>
+
+      <div class="tl-item" style="--c:var(--spring)">
+        <div class="tl-month"><span class="m">5月</span>親子イベント<span class="tag">保護者も一緒に</span></div>
+        <div class="tl-card">
+          <div class="tl-row"><b class="both">HOP &amp; SOAR</b><strong>流しそうめん</strong><p>毎年恒例の流しそうめんを、今年は初夏に開催します。水遊びも一緒に楽しみながら、親子で気持ちのよい時間を。</p></div>
+        </div>
+      </div>
+
+      <div class="tl-item" style="--c:var(--summer)">
+        <div class="tl-month"><span class="m">6月</span>アウトドアクッキング</div>
+        <div class="tl-card">
+          <div class="tl-row"><b class="hop">HOP</b><strong>簡単おかずづくり</strong><p>火付けは行わず、カセットコンロで簡単な調理に挑戦。洗う・切る・焼くの工程をグループで分担します。</p></div>
+          <div class="tl-row"><b class="soar">SOAR</b><strong>2人組 炊飯チャレンジ</strong><p>上級生と下級生のペアで飯盒炊飯に挑戦。HOPの子どもたちのご飯も用意する、責任感のある活動です。</p></div>
+        </div>
+      </div>
+
+      <div class="tl-item" style="--c:var(--summer)">
+        <div class="tl-month"><span class="m">7月</span>おでかけDAY<span class="tag">合同</span></div>
+        <div class="tl-card">
+          <div class="tl-row"><b class="both">HOP &amp; SOAR</b><strong>公共交通機関で少し遠くへ</strong><p>ふだんの活動場所を離れ、自然にまつわる場所へお出かけします。合同グループで異年齢の関わりを大切にします。</p></div>
+        </div>
+      </div>
+
+      <div class="tl-item" style="--c:var(--summer)">
+        <div class="tl-month"><span class="m">8月</span>お休み<span class="tag">熱中症対策</span></div>
+        <div class="tl-card">
+          <div class="tl-row"><b class="both">HOP &amp; SOAR</b><strong>2026年度はお休みです</strong><p>猛暑のなかの屋外活動は負担が大きいため、2026年度の8月は熱中症対策として休講としました。2027年度は室内での活動として実施し、年間12回に戻す予定です。</p></div>
+        </div>
+      </div>
+
+      <div class="tl-item" style="--c:var(--summer)">
+        <div class="tl-month"><span class="m">9月</span>グループ別活動<span class="tag">水辺</span></div>
+        <div class="tl-card">
+          <div class="tl-row"><b class="hop">HOP</b><strong>水の生き物探し</strong><p>水辺に住む生き物を探してみよう。網を使って“ガサガサ”に挑戦します。</p></div>
+          <div class="tl-row"><b class="soar">SOAR</b><strong>チャレンジクッキング</strong><p>具材と調味料、そして完成写真だけを頼りに子どもたちが調理を進めます。大人は最小限の声かけだけ。</p></div>
+        </div>
+      </div>
+
+      <div class="tl-item" style="--c:var(--autumn)">
+        <div class="tl-month"><span class="m">10月</span>グループ別活動<span class="tag">秋の実り</span></div>
+        <div class="tl-card">
+          <div class="tl-row"><b class="hop">HOP</b><strong>ピザ作り</strong><p>秋の食材を使ってピザを焼きます。生地は事前に準備し、火付けは子どもたちが手伝います。</p></div>
+          <div class="tl-row"><b class="soar">SOAR</b><strong>スウェディッシュトーチ作り</strong><p>薪束で簡易的なトーチを作り、“燃料・空気・煙突効果”の仕組みを実験的に学びます。</p></div>
+        </div>
+      </div>
+
+      <div class="tl-item" style="--c:var(--autumn)">
+        <div class="tl-month"><span class="m">11月</span>グループ別活動<span class="tag">火の季節</span></div>
+        <div class="tl-card">
+          <div class="tl-row"><b class="hop">HOP</b><strong>焼き芋＆ホイル焼き</strong><p>焚火台を使って網なしのクッキングに挑戦。薪と木炭の違いを感じながら楽しみます。</p></div>
+          <div class="tl-row"><b class="soar">SOAR</b><strong>チャークロス作り</strong><p>火付け道具の“チャークロス”を作り、炭化の仕組みを学びます。作ったものは1月の活動で使います。</p></div>
+        </div>
+      </div>
+
+      <div class="tl-item" style="--c:var(--winter)">
+        <div class="tl-month"><span class="m">12月</span>おでかけDAY<span class="tag">合同</span></div>
+        <div class="tl-card">
+          <div class="tl-row"><b class="both">HOP &amp; SOAR</b><strong>自然にまつわる場所へ</strong><p>公共交通機関を利用してお出かけします。合同チームで、異年齢の関わりをさらに深めます。</p></div>
+        </div>
+      </div>
+
+      <div class="tl-item" style="--c:var(--winter)">
+        <div class="tl-month"><span class="m">1月</span>グループ別活動<span class="tag">3月へ向けて</span></div>
+        <div class="tl-card">
+          <div class="tl-row"><b class="hop">HOP</b><strong>テント張り</strong><p>3月のテント泊に向けて、自分たちでテントを張ります。テントの中ではカードゲームやおしゃべりも。</p></div>
+          <div class="tl-row"><b class="soar">SOAR</b><strong>全員分のごはんを作ろう</strong><p>HOPや先生たちの分まで、ソアー全員で調理します。火の管理から調理まで自分たちの力で進める、一年の集大成。</p></div>
+        </div>
+      </div>
+
+      <div class="tl-item" style="--c:var(--winter)">
+        <div class="tl-month"><span class="m">2月</span>合同プログラム<span class="tag">全員</span></div>
+        <div class="tl-card">
+          <div class="tl-row"><b class="both">HOP &amp; SOAR</b><strong>チーム対抗ゲーム大会</strong><p>2チームに分かれて、寒空の下で思いきり体を動かします。クスカ全体の“仲間意識”を育てる時間です。</p></div>
+        </div>
+      </div>
+
+      <div class="tl-item camp">
+        <div class="tl-month"><span class="m" style="color:var(--camp)">3月</span>クスカキャンプ<span class="tag">年に一度のテント泊</span></div>
+        <div class="tl-card">
+          <div class="tl-row"><b class="both" style="background:var(--camp)">HOP &amp; SOAR</b><strong>一年のまとめのキャンプ</strong><p>テント張り・調理・焚火・片付けまで、これまでの経験を活かしながら過ごす学びの多い1泊。子どもたちの成長を実感できる、締めくくりの活動です。</p></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tl-note">
+      <div class="box">年間12回を予定しています（2026年度は8月休講のため11回）。天候や現地の状況により内容・日程が変更になる場合があります。</div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== VALUES ===== -->
+<section class="values">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="sec-en">OUR CARE</span>
+      <h2>クスカが大切にしていること</h2>
+    </div>
+    <div class="vgrid">
+      <div class="v">
+        <svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="20" fill="#e2efe5"/><path d="M14 30c0-6 4-10 10-10s10 4 10 10" stroke="#2e5c48" stroke-width="3.5" fill="none" stroke-linecap="round"/><circle cx="24" cy="15" r="4.5" fill="#2e5c48"/></svg>
+        <h3>“やりすぎない援助”を大切にする</h3>
+        <p>保育士を中心に、子どもと関わる経験を持つスタッフが引率します。もちろん、大人が準備して大人が進めたほうが早いしスムーズです。それでも、できるだけ子どもたちに関わってもらいます。時間はかかるし、失敗もします。でも自分たちでやってみるからこそ、「できた」という達成感と「次はこうしたい」が育っていきます。</p>
+      </div>
+      <div class="v">
+        <svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="20" fill="#e6edf2"/><rect x="12" y="17" width="24" height="17" rx="4" fill="#2e5c48"/><circle cx="24" cy="25.5" r="5.5" fill="#e6edf2"/><rect x="20" y="13" width="8" height="5" rx="2" fill="#2e5c48"/></svg>
+        <h3>写真と動画で、その日を共有する</h3>
+        <p>活動中の写真や動画を撮影し、後日Googleフォトでご家庭に共有しています。「今日どんな1日だったの？」が自然と会話になる、喜ばれている取り組みです。</p>
+      </div>
+      <div class="v">
+        <svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="20" fill="#f7e8d8"/><g fill="#2e5c48"><circle cx="18" cy="20" r="4"/><circle cx="30" cy="20" r="4"/><path d="M10 34c0-5 3.5-8 8-8s8 3 8 8Z"/><path d="M22 34c0-5 3.5-8 8-8s8 3 8 8Z"/></g><circle cx="36" cy="14" r="6" fill="#d9a441"/><path d="M33.5 14 L35.5 16 L38.8 11.8" stroke="#fff" stroke-width="1.8" fill="none" stroke-linecap="round"/></svg>
+        <h3>体験は、月に2名までにする</h3>
+        <p>子ども同士の関わりや安心感を守るため、体験で参加できるお子さまを月2名までにしています。既存メンバーにも体験のお子さまにも、心地よく過ごしてもらうためです。</p>
+      </div>
+      <div class="v">
+        <svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="20" fill="#e2efe5"/><rect x="14" y="12" width="20" height="25" rx="3" fill="#fff" stroke="#2e5c48" stroke-width="2.5"/><g stroke="#2e5c48" stroke-width="2.5" stroke-linecap="round"><path d="M19 20 L29 20"/><path d="M19 26 L29 26"/><path d="M19 31 L25 31"/></g></svg>
+        <h3>毎月、オリジナルの学習シートを作る</h3>
+        <p>活動に合わせた学習シートを毎月作成しています。子どもたちはシートをファイリングし、先生の話と合わせて視覚的にも理解を深めます。「聞いて終わり」にせず、見てわかる・振り返れる仕組みにしています。</p>
+      </div>
+      <div class="v">
+        <svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="20" fill="#e6edf2"/><path d="M14 26 C14 20 18 17 23 17 C28 17 31 20 32 24 C36 24 38 27 38 29 C38 32 35 33 33 33 L16 33 C14 33 12 31 12 29 C12 27 13 26 14 26Z" fill="#8fadbf"/><g stroke="#4f7a96" stroke-width="3" stroke-linecap="round"><path d="M18 37 L16 41"/><path d="M25 37 L23 41"/><path d="M32 37 L30 41"/></g></svg>
+        <h3>雨でも開催します</h3>
+        <p>暴風警報や大雨警報が出ているときを除いて、雨の日も活動します。カッパに当たる雨の音、長靴で水たまりを歩く感覚。晴れの日とは違う景色のなかでも、子どもたちは歩きながら発見を見つけます。雨の日を「大変だな」と感じているのは、子どもたちより大人のほうかもしれません。</p>
+      </div>
+      <div class="v">
+        <svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="20" fill="#f6e3e7"/><path d="M24 34s-10-6.5-10-13a5.6 5.6 0 0 1 10-3.3A5.6 5.6 0 0 1 34 21c0 6.5-10 13-10 13Z" fill="#e0a0ad"/></svg>
+        <h3>キャンセル料は、いただきません</h3>
+        <p>急な体調不良やご家族の予定など、予測できない事情もあります。当日であってもキャンセル料は一切いただきません。無理をせず、ご家庭のペースで続けていただけます。</p>
+      </div>
+      <div class="v">
+        <svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="20" fill="#e6edf2"/><path d="M12 30 L20 18 L26 26 L31 20 L36 30Z" fill="#6d8ba3"/><circle cx="32" cy="15" r="4" fill="#d9a441"/><path d="M10 33 L38 33" stroke="#2e5c48" stroke-width="3" stroke-linecap="round"/></svg>
+        <h3>保護者の付き添いは必要ありません</h3>
+        <p>お子さまのみの参加が可能です。移動中・活動中は男女2名以上のスタッフが引率します。女性スタッフは月によって交代することがあります。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== INFO / PRICE ===== -->
+<section id="info">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="sec-en">CLASS &amp; FEE</span>
+      <h2>開催クラスと参加費</h2>
+    </div>
+
+    <div class="venues">
+      <div class="venue">
+        <h3>金山クラス</h3>
+        <span class="day">日曜日</span>
+        <dl>
+          <dt>集合・解散</dt><dd>JR金山駅 大型ビジョン前</dd>
+          <dt>集合時間</dt><dd>8:45 <span style="color:var(--ink-soft);font-size:.85em;">※活動内容により変更あり</span></dd>
+          <dt>解散時間</dt><dd>15:00 <span style="color:var(--ink-soft);font-size:.85em;">※活動内容によって16:00になることもあります</span></dd>
+        </dl>
+        <div class="pillrow"><span class="pill hop">HOP</span><span class="pill soar">SOAR</span></div>
+      </div>
+      <div class="venue">
+        <h3>大曽根クラス</h3>
+        <span class="day">土曜日</span>
+        <dl>
+          <dt>集合・解散</dt><dd>JR大曽根駅 改札前</dd>
+          <dt>集合時間</dt><dd>8:45 <span style="color:var(--ink-soft);font-size:.85em;">※活動内容により変更あり</span></dd>
+          <dt>解散時間</dt><dd>15:00 <span style="color:var(--ink-soft);font-size:.85em;">※活動内容によって16:00になることもあります</span></dd>
+        </dl>
+        <div class="pillrow"><span class="pill hop">HOP</span></div>
+      </div>
+    </div>
+
+    <div class="price">
+      <div class="price-top">
+        <span class="amount">7,000<span style="font-size:1.2rem;">円</span></span>
+        <span class="unit">／ 1回（交通費込み）</span>
+        <span class="tag">年間12回予定・月1回</span>
+      </div>
+      <div class="disc">
+        <div><b>兄弟姉妹割引</b><span>兄弟姉妹でご参加の場合、一名につき500円引き</span></div>
+        <div><b>教室割引</b><span>educareの教室に通っているお子さまは500円引き（JUMP UP体操教室など）</span></div>
+      </div>
+      <p class="price-note">
+        ※ 割引は併用できます。<br>
+        ※ 参加費には現地までの交通費が含まれています。電車賃はお子さま自身がICカードでお支払いいただき、その分を差し引いた金額をご請求します。活動場所によって毎月のご請求額は変わります。<br>
+        ※ 活動日の2週間前に、活動の詳細とクレジット決済リンクを公式LINEでご案内します。銀行振込をご希望の場合は個別にご案内しますので、3日前までにお手続きください。<br>
+        ※ 体験参加も、通常と同じ参加費をいただいています。
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FLOW ===== -->
+<section class="flow">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="sec-en">FLOW</span>
+      <h2>申し込みから、活動のあとまで</h2>
+      <p>活動日の一日だけでなく、その前後もふくめてクスカの時間だと思っています。</p>
+    </div>
+    <ol class="flowlist">
+      <li>
+        <h3>出欠アプリから申し込む</h3>
+        <p>クスカオリジナルの出欠アプリで、参加する回を登録します。</p>
+      </li>
+      <li>
+        <h3>そのまま、お支払いまで</h3>
+        <p>登録したあとは、続けてお支払いのページへ。<em>兄弟姉妹割引や教室割引も自動で計算されます。</em></p>
+      </li>
+      <li>
+        <h3>当日のご案内が、おうちに届く</h3>
+        <p>活動日が近づくと、当日のご案内を郵送でお届けします。子どもたちが自分で封を開けて、当日を楽しみに待てるように。</p>
+      </li>
+      <li>
+        <h3>活動当日</h3>
+        <p>朝になって体調をくずしてしまったときは、公式LINEで欠席のご連絡を。<em>キャンセル料はいただいていません。</em></p>
+      </li>
+      <li>
+        <h3>写真と動画を共有します</h3>
+        <p>活動のあと、その日の写真と動画をGoogleフォトでお渡しします。現地でどんなふうに過ごしていたのか、表情まで見ていただけます。</p>
+      </li>
+      <li>
+        <h3>ベストショットが、おうちに届く</h3>
+        <p>次回のご案内と一緒に、その月のベストショットを1枚（チェキサイズ）郵送でお届けします。活動ファイルの写真入れにためていくと、一年分の記録として見返せます。</p>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- ===== FAQ ===== -->
+<section id="faq" class="classes">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="sec-en">FAQ</span>
+      <h2>よくあるご質問</h2>
+    </div>
+    <div class="faq">
+      <div class="qa">
+        <h3><span>Q.</span>年度の途中でも入会・退会できますか？</h3>
+        <p>はい、年度の途中での入会・退会が可能です。継続についてお悩みの場合は、いつでも公式LINEからご相談ください。（入会金・年会費の返金はいたしかねます。ご了承ください。）</p>
+      </div>
+      <div class="qa">
+        <h3><span>Q.</span>参加費の支払い方法を教えてください。</h3>
+        <p>活動日の2週間前に、活動の詳細のご案内とクレジット決済リンクを公式LINEでお知らせします。銀行振込も可能です。振込をご希望の場合は、活動日の3日前までにお手続きをお願いします（個別にご案内しますので、一度ご連絡ください）。</p>
+      </div>
+      <div class="qa">
+        <h3><span>Q.</span>保護者の付き添いは必要ですか？</h3>
+        <p>いいえ、必要ありません。お子さまのみの参加が可能です。移動中・活動中はスタッフ2名以上が引率します。スタッフは男性・女性それぞれおり、女性スタッフは月によって別のスタッフに変わることがあります。</p>
+      </div>
+      <div class="qa">
+        <h3><span>Q.</span>参加費の割引はありますか？</h3>
+        <p>はい、以下の割引があります。ぜひご活用ください。</p>
+        <p><b>兄弟姉妹割引</b>：兄弟姉妹でご参加の場合、一名につき500円引き<br><b>教室割引</b>：educareの教室に通っているお子さまは500円引き<br>※ 割引は併用可能です。</p>
+      </div>
+      <div class="qa">
+        <h3><span>Q.</span>体験に参加したいのですが、すぐに参加できますか？</h3>
+        <p>体験枠は1回の活動につき2名までとしています。空きが出次第、順番にご案内していますので、まずは公式LINEからお問い合わせください。なお体験参加も、通常と同じ参加費をいただいています。</p>
+      </div>
+      <div class="qa">
+        <h3><span>Q.</span>雨の日はどうなりますか？</h3>
+        <p>暴風警報や大雨警報など、安全面に問題がない限り、基本的に雨の日も活動します。タープを張って調理したり、テントの中で過ごしたりと、雨の日にしかできない過ごし方をします。中止の判断が必要な場合は、公式LINEでご連絡します。</p>
+      </div>
+      <div class="qa">
+        <h3><span>Q.</span>キャンプ（テント泊）は毎月あるのですか？</h3>
+        <p>いいえ。テント泊は年に一度、3月のみです。ふだんの活動は日帰りで、朝に駅に集合して夕方に駅で解散します。1月にテント張りの練習をして、3月の本番に臨みます。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CTA ===== -->
+<section class="cta">
+  <div class="wrap">
+    <h2>まずは、一日いっしょに過ごしてみませんか。</h2>
+    <p>公式LINEにご登録いただくと、体験のご案内や最新の活動情報をお届けします。ご質問だけでもお気軽にどうぞ。</p>
+    <a class="btn btn-line btn-lg" href="https://lin.ee/s6IoexC" target="_blank" rel="noopener">公式LINEで体験を申し込む</a>
+    <a class="btn btn-ghost btn-lg" href="https://taikikurono-art.github.io/ksca-members/" target="_blank" rel="noopener">会員の方はこちら</a>
+    <p class="small">※ 体験枠には限りがあります。空きが出次第、順番にご案内いたします。</p>
+  </div>
+</section>
+
+<!-- ===== RELATED ===== -->
+<section>
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="sec-en">RELATED</span>
+      <h2>関連するサービス</h2>
+    </div>
+    <div class="rel">
+      <a href="#" >
+        <b>そらいろポケット</b>
+        <span>郡上・長野などへ出かける、宿泊・日帰りの季節ツアー。クスカの通年の活動に対して、「もっと遠くへ・もっと長く」を担当します。</span>
+        <span class="arrow">季節ツアーを見る →</span>
+      </a>
+      <a href="https://jumpup-nagoya.com" target="_blank" rel="noopener">
+        <b>JUMP UP 体操教室</b>
+        <span>保育園・幼稚園での体操指導と、スタジオレッスン。JUMP UPに通うお子さまは、クスカの参加費が500円引きになります。</span>
+        <span class="arrow">体操教室を見る →</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="fgrid">
+      <div>
+        <img class="flogo" src="assets/lockup.png" alt="クスカ KIDS SMALL CAMP">
+        <p>クスカ（KIDS SMALL CAMP）<br>名古屋・春日井の年中〜小学生向け<br>通年制 自然体験教室</p>
+      </div>
+      <div>
+        <h4>MENU</h4>
+        <ul>
+          <li><a href="#about">クスカについて</a></li>
+          <li><a href="#class">クラス（HOP / SOAR）</a></li>
+          <li><a href="#teachers">先生の紹介</a></li>
+          <li><a href="#program">年間プログラム</a></li>
+          <li><a href="#info">料金・開催日</a></li>
+          <li><a href="#faq">よくある質問</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>CONTACT</h4>
+        <ul>
+          <li><a href="https://lin.ee/s6IoexC" target="_blank" rel="noopener">公式LINE（体験のお申し込み）</a></li>
+          <li><a href="https://www.instagram.com/educare_nagoya/" target="_blank" rel="noopener">Instagram</a></li>
+          <li><a href="https://taikikurono-art.github.io/ksca-members/" target="_blank" rel="noopener">会員ページ</a></li>
+          <li><a href="https://educare-nagoya.com" target="_blank" rel="noopener">educare（運営）</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="fbottom">
+      <span>© educare. All Rights Reserved.</span>
+      <span>クスカは educare が運営する自然体験教室です。</span>
+    </div>
+  </div>
+</footer>
+
+
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="写真">
+  <img id="lbImg" alt="">
+  <button class="lb-close" id="lbClose" aria-label="閉じる">&#10005;</button>
+  <button class="lb-prev" id="lbPrev" aria-label="前へ">&#10094;</button>
+  <button class="lb-next" id="lbNext" aria-label="次へ">&#10095;</button>
+  <span class="lb-count" id="lbCount"></span>
+</div>
+<script>
+(function(){
+  var figs=[].slice.call(document.querySelectorAll('.wall-grid figure:not(.is-video) img'));
+  if(!figs.length) return;
+  var lb=document.getElementById('lb'),im=document.getElementById('lbImg'),ct=document.getElementById('lbCount'),i=0;
+  function show(n){i=(n+figs.length)%figs.length;im.src=figs[i].src;ct.textContent=(i+1)+' / '+figs.length;}
+  function open(n){show(n);lb.classList.add('open');document.body.style.overflow='hidden';}
+  function close(){lb.classList.remove('open');document.body.style.overflow='';im.src='';}
+  figs.forEach(function(el,n){el.parentNode.addEventListener('click',function(){open(n);});});
+  document.getElementById('lbClose').addEventListener('click',close);
+  document.getElementById('lbPrev').addEventListener('click',function(e){e.stopPropagation();show(i-1);});
+  document.getElementById('lbNext').addEventListener('click',function(e){e.stopPropagation();show(i+1);});
+  lb.addEventListener('click',function(e){if(e.target===lb||e.target===im)close();});
+  document.addEventListener('keydown',function(e){
+    if(!lb.classList.contains('open'))return;
+    if(e.key==='Escape')close();
+    if(e.key==='ArrowLeft')show(i-1);
+    if(e.key==='ArrowRight')show(i+1);
+  });
+})();
+</script>
+</body>
+</html>
