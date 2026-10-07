@@ -513,6 +513,15 @@ section{padding:84px 0;}
 /* ---------- teachers ---------- */
 .teachers{background:var(--paper);}
 .teachers .sec-head h2{line-height:1.5;}
+.teachers .sec-head p.team-lead{
+  max-width:660px;margin:0 auto 12px;
+  font-size:1.04rem;line-height:2;color:var(--ink);
+}
+.teachers .sec-head p.team-lead b{font-weight:900;color:var(--forest);}
+.teachers .sec-head p.team-sub{font-size:.93rem;}
+@media(max-width:768px){
+  .teachers .sec-head p.team-lead{font-size:.98rem;line-height:1.95;}
+}
 .teacher-grid{display:grid;grid-template-columns:1fr;gap:18px;max-width:880px;margin-inline:auto;}
 .teacher{
   background:#fff;border:1px solid var(--paper-3);border-radius:var(--radius);
@@ -1016,7 +1025,8 @@ footer a:hover{text-decoration:underline;}
     <div class="sec-head">
       <span class="sec-en">OUR TEAM</span>
       <h2>クスカを支える先生たち</h2>
-      <p>クスカのスタッフは学生ではなく、全員が保育の現場をしっかり経験してきた先生たちです。個性豊かな子どもたちをしっかり受け止める、強くてやさしいクスカの屋台骨です。</p>
+      <p class="team-lead"><b>学生アルバイトはいません。</b>引率するのは全員、保育園や幼稚園の現場に立ってきた先生です。</p>
+      <p class="team-sub">個性豊かな子どもたちをまるごと受け止める、強くてやさしいクスカの屋台骨です。</p>
     </div>
     <div class="teacher-grid">
       <div class="teacher">
